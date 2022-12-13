@@ -390,6 +390,11 @@ var data = [
         "parent": "Eastern Asia"
     },
     {
+        "id": "China",
+        "value": 18.18,
+        "parent": "Eastern Asia"
+    },
+    {
         "id": "Jordan",
         "value": 0.079,
         "parent": "Western Asia"
@@ -926,7 +931,7 @@ var data = [
     },
     {
         "id": "Eastern Asia",
-        "value": 4.013,
+        "value": 22.193,
         "parent": "Asia"
     },
     {
@@ -946,7 +951,7 @@ var data = [
     },
     {
         "id": "Asia",
-        "value": 23.12,
+        "value": 41.3,
         "parent": "World"
     },
     {
