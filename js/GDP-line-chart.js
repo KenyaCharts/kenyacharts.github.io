@@ -210,6 +210,7 @@ var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
   tooltip: am5.Tooltip.new(root, {})
 }));
 
+
 xAxis.data.setAll(data);
 
 var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
