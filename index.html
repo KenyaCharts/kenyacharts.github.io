@@ -163,7 +163,6 @@
             </p>
 
         </li>
-        <p>&ensp;</p>
     </ul>
     <br>
     <hr>
@@ -192,7 +191,7 @@
     <p> We developed our own custom models to understand the historical county-level trends of some adjusted key economic indicators. <br> <br>
         We've used a linear regression model using the KNBS’s reported GCP from (2013 - 2020) as a % of Kenya’s Total GVA to understand the possible historical trend of a county’s  GCP.  <br> <br>
         We've used the reported four-year (2017-2020) average sector-level GCP along with the back-casted regressed GCP share of Kenya’s total  GDP to understand the historical sector level trends by county. <br> <br>
-        Finally we used the IHME’s  Modeled Average Years of Education based on DHS surveys by Gender to develop a county specific autoregressive model to understand both historical and future trends of education by county. <br> <br>
+        Furthermore, we've used the IHME’s  Modeled Average Years of Education based on DHS surveys by Gender to develop a county specific autoregressive model to understand both historical and future trends of education by county. <br> <br>
         Finally we used the UN’s subnational custom r simulation to project population, TFR, and Demographic Breakdown to the year 2050. We've used IHME’s estimated TFR and Mortality Rate by county  (using  the 5yr average from DHS) as inputs for the custom simulation. A key aspect to remember is that we were unable to use the migration parameter due to the fact such information is not available on a local-level, therefore the real modeled value may be slightly higher than the reported value from KNBS.
         <br>
     </p>
@@ -206,10 +205,11 @@
     <hr>
     <p> Given the very limited sources of accurate data currently available for Kenya (e.g. Garissa’s census crisis,
         high fluctuation of gross county product (GCP) (defined as a proportion of Kenya's GVA attributed to each county) in numerous counties
-        within Kenya, etc…), our team has decided to focus on bridging the gap between sources and accessibility by building a tool that allows users to visualize and further explore key indicators that can provide some color as to what is occurring in Kenya locally.
-        With this aggregation of data, users are able to
+        within Kenya, etc…), our team has decided to focus on bridging the gap between sources and accessibility by building a tool that allows users to visualize and further explore key indicators that can provide some color as to what is occurring in Kenya locally.<br><br>
+        With this aggregation of data and back-casting of current data, users are able to
         understand the future trends of economic growth on the county-level in Kenya and understand how key local-social indicators impact economic growth in an emerging country.
-       We hope that this tool will provide policymakers and investors a window into the future economic trends of each county and guide their decision-making process while implementing policy and making potential investments within Kenya.
+       We hope that this tool will provide policymakers and investors a window into the future economic trends of each county and guide their decision-making process while implementing new policies and making potential investments within Kenya. <br><br>A key aspect to keep in mind is our ability to measure the accuracy of our data to the real values reported. As mentioned above until, 2010, Kenya was divided into provinces, and only after the ratification of their new constitution in 2010 has Kenya started monitoring micro-level data by county. Furthermore, they have only started reporting some of these socioeconomic county-level indicators in 2013 on a yearly basis, and have expanded sector level indicators in 2017. Therefore, we have little references as to how accurate our models are compared to the actual reported real value results for each specific county historically. To accommodate for these restrictions we compared our results to the data provided by DHS (since they reported their information at 5-year intervals using geospatial locations) and the average MSE ranged from 0.0038
+        0.34914 depending on the county for ASFR, Years of Education, and Household Size for the years 1998-2014. Using these metrics we were able to see that our models do provide an accurate representation of the trends seen based on geospatial locations within the newly created county boundaries historically.
     <hr>
 </section>
 
@@ -217,60 +217,126 @@
     <h3 class="title">Explore the Dashboard</h3>
     <hr>
    <p> <a href="https://capstone2022-kenya-socioeconomic.shinyapps.io/capstone_kenya/" target="_blank" style="font-size: 18px;color:#407BFF;">[Link to Our Dashboard]</a></p>
-    <p> Key applications of our tool include identifying key trends in socioeconomic indicators that  could potential identify local areas that would help expand their already diversifying economy. Some key indicators would be seeing the growth in the youth population, trends in education and TFR, gender breakdown, and sector level diversification in the county's economy. </p>
+    <p> Key applications of our tool are identifying key potential trends of a county that can indicate a county's potential of sustainable economic diversification and growth. Some key indications of such growth would be seeing the growth in the youth population, upward trend in education, specifically for women, steeper downward trend in TFR, even gender breakdown, and slowly reducing agriculture sector. </p>
+    <ul class="grid">
+        <li class="small" style="">
+            <p>
+                <img src="img/icons/person-svgrepo-com.svg" width="75">
+                <br>
+            <div class ="center">
+                <h3> Increase in Youth Population<br>
+                </h3>
+            </div>
+            </p>
+        </li>
+        <p>&ensp;</p>
+        <li class="small" style="">
+            <p>
+                <img src="img/icons/education-svgrepo-com.svg" width="75">
+                <br>
+            <h3 class ="center">Increase in Women's Education</h3>
+            </p>
+        </li>
+        <p>&ensp;</p>
+        <li class="small" style="">
+            <p>
+                <img src="img/icons/baby-icon.svg" width="auto" height="75">
+                <br>
+            <h3 class ="center">Steeper Decline in TFR</h3>
+            </p>
+
+        </li>
+        <p>&ensp;</p>
+        <li class="small" style="">
+            <p>
+                <img src="img/icons/money-svgrepo-com.svg" width="75">
+                <br>
+            <h3 class ="center">Sustainable Economic Diversification </h3>
+            </p>
+
+        </li>
+    </ul>
     <hr>
-    <h3 class="title">Tab 1: Interactive Map</h3>
+</section>
+    <section id="section-data-tool-examples" class="about">
+    <h4 class="title">(Below are Interactive Screenshots from our Dashboard)</h4>
     <br>
-    <h6 class="title">Click Image to go to the Interactive Map</h6>
+    <p> Key applications of our tool include identifying key trends in socioeconomic indicators that  could potentially identify local areas that would help expand their already diversifying economy. Some key indicators would be seeing the growth in the youth population, trends in education and TFR, gender breakdown, and sector level diversification in the county's economy. </p>
+   <br><br>
+    <h3 class="title">Tab 1: Interactive Map</h3>
+        <hr>
+    <p>This tab allows the user to explore both reported and modeled data by geolocation of the county on a map. In the top right corner we have provided the option of adjusting the year of the map you would like to see as well as the type of map you would like to see. There are three types of maps: GCP(Modeled), the Gini Index (Reported), and GCP YoY growth (Modeled), and each county is highlighted according to the map selected. By clicking on a specific the county within the map, the left hand panel will present the individual metrics for the specific county compared to the rest of the counties. </p>
+    <br>
+    <br>
+    <h6 class="title">(Click Image to go to the Interactive Map)</h6>
     <br><br>
     <a href="https://capstone2022-kenya-socioeconomic.shinyapps.io/capstone_kenya/" target="_blank"><img src="img/tab1_img.png" frameborder="yes"></a>
     <br><br>
     <br>
     <br>
     <h3 class="title">Tab 2: County-Level Indicators</h3>
+        <hr>
     <br><br>
+    <p> This tab provides both reported information from the most recent census data (2019) and our custom models that use data from a variety of sources</p>
     <p align="center"><iframe height="50%" width="50%" frameborder="no" src="ggplotly/kenya_map.html"></iframe></p>
     <hr>
     <br>
 
     <h4 class="title">2019 Census Reported County Information by KNBS</h4>
-    <br><br>
+    <br>
+    <p> This section provides the reported information demographic and agriculture breakdown by KNBS from the 2019 census for each county.</p>
+    <h6>(As mentioned before agriculture is still the driving force of Kenya's economy)</h6>
+    <br>
     <div class="center">
     <img height="100%" width="auto" frameborder="no" src="img/value_info_box.png">
     </div>
-    <br><br>
+    <br><br><hr>
 
     <br>
     <h4 class="title">Custom UN Sub-National Population Projections</h4>
+    <br> <p> This section presents the results from the UN’s subnational custom r simulation, mentioned above. <br> We've provided the simulations projections for population, TFR, and Gender/Age Breakdown to the year 2050 and their corresponding confidence intervals.</p>
+    <h6> (Hover over each graph to obtain more information through the tooltip)</h6>
     <br><br>
     <ul class="grid">
         <li class="small" >
             <iframe height="50%" width="50%" frameborder="no" src="ggplotly/pop_proj.html"></iframe>
         </li>
+        <p>&ensp;</p>
         <li class="small" >
             <iframe height="50%" width="50%" frameborder="no" src="ggplotly/kisumu-tfr.html"></iframe>
         </li>
+        <p>&ensp;</p>
         <li class="small" >
             <iframe height="50%" width="50%" frameborder="no" src="ggplotly/pop_pyramid.html"></iframe>
         </li>
     </ul>
-    <br><br><br><br>
-    <h4 class="title">Custom Models to See Historical Trends</h4>
-    <br><br><br>
+    <br><br><br><br><hr>
+    <h4 class="title">Custom Models to Analyze Historical Trends</h4>
+    <br>
+        <h6>(Hover over each graph to obtain more information through the tooltip)</h6>
+        <br><br>
+    <h5 class="title">County Specific Autoregressive Model using IHME's Median Years of Education</h5>
+    <br>
     <ul class="grid">
         <li class="small" >
-            <h5 class="title">County Specific Autoregressive Model</h5>
-            <br>
+
             <iframe height="50%" width="50%" frameborder="no" src="ggplotly/Kilifi-edu.html"></iframe>
         </li>
+
+    </ul>
+    <h5 class="title">Back-casted GCP Proportion Linear Regressive Model using reported 2013-2020 Data</h5>
+    <br>
+    <ul class="grid">
         <li class="small" >
-            <h5 class="title">Backcasted Linear Regressive Model</h5>
-            <br>
+
             <iframe height="50%" width="50%" frameborder="no" src="ggplotly/gcp.html"></iframe>
         </li>
+    </ul>
+    <h5 class="title">Back-casted Sector 4-yr (2017-2020 Reported) Average using our GCP Proportion Linear Regressive Model</h5>
+    <br>
+    <ul class="grid">
         <li class="small" >
-            <h5 class="title">Backcasted Average Linear Regressive Model</h5>
-            <br>
+
             <iframe height="50%" width="50%" frameborder="no" src="ggplotly/Nyandarua-stacked-industry.html"></iframe>
         </li>
     </ul>
@@ -281,7 +347,7 @@
 <section id="section-intelligence" class="packages">
     <h3 class="title">Intelligence Examples</h3>
     <hr>
-    <p> Key Intelligence derived from our Dashboard</p>
+<!--    <p> Key Intelligence derived from our Dashboard</p>-->
 
     <!--    Example 2 -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
 
@@ -289,7 +355,7 @@
         <li>
             <a href="#"><i class="fas fa-compass fa-4x"></i>
                 <h4>Nyandarua - (nin-dar-waa)</h4></a>
-            <p>This county has seen the largest increase GVA from 2000 to 2020, even though it is landlocked. This increase is because the county, centered around agriculture, has gone from 1% of Kenya's total agricultural production to 4%. Farmers in the county cite a significant improvement in farming tactics, like using fertilizer and manure, while decreased costs of raw materials as the source of the gain. Agriculture service offices are providing farmers with knowledge on how to improve their farming practices using western research. However, some constraints on logistics, like poor roads, limit the distribution of goods leading to wasted crops. Investments in technology that can improve agriculture logistics while improving the reach of services offices guiding farmers in other counties could significantly strengthen Kenya's agricultural economy.</p>        </li>
+            <p>From our dashboard we were able to identify that this county has seen the largest increase in overall GCP (Gross County Product) from 2000 to 2020, even though it is landlocked as seen in our Interactive Map. Our dashboard was able to highlight the increase in Nyandarua's impact on the increase in Kenya's agricultural GDP, rising from 1% to 4%. This is the epitome of the type of information that would be beneficial to policymakers and investors explore further in a local level and identify the best use of invested funds. <br><br>Through our own preliminary research we were able to determine that farmers in the county cite a significant improvement in farming tactics, such as using fertilizer and manure, along with decreasing costs of raw materials provided significant gains over the recent years. Agriculture service offices have been providing farmers with knowledge on how to improve their farming practices using western research, and overall support. However, there are still some constraints on logistics, like poor roads that limit the distribution of goods leading to wasted crops, and more needed investments in upgrading technology that can improve the efficiency of agriculture logistics. What must also be recognized is that the significant improvement in Nyandarua's agriculture based economy can be replicated elsewhere, thus such information from our dashboard  guiding force to help farmers in other counties with limited resources continue to strengthen Kenya's overall agricultural economy.</p>        </li>
     </ul>
     <ul class="grid">
         <li>
@@ -306,7 +372,7 @@
             <a href="#"><i class="fas fa-compass fa-4x"></i>
                 <h4>Kisumu (kiss-oo-moo)</h4></a>
 
-            <p>Kenya's fertility rate is falling below the replacement rate and stabilizing between 1.5 and 1.7 in city hubs. Education is generally increasing, signaling a transition to greater industrialization. Kisumu (kiss-oo-moo) perfectly follows this trend leading to a peak in population around 2060. Kenya has taken a strong stance on bolstering education, rolling out a Free primary education program in 2003 and revamping its curriculum in 2017, supplying students with more key materials like books. However, resources like teachers can be scarce, where large teacher-student ratios are common. Further focusing on educational supplies and incentivizing individuals to become teachers through student loan forgiveness programs could ameliorate educational resource constraints.</p>        </li>
+            <p>Another example, is how our dashboard was able to identify the rise in overall economies of major cities by using demographic indicators. For example, our dashboard shows that Kisumu, and other similar major counties,depict how Kenya's fertility rate is falling below the replacement rate and stabilizing between 1.5 and 1.7. Also, education, specifically for women, is generally increasing, signaling a transition to greater industrialization. These demographic trends lead to a peak in population around 2060. <br><br>After further exploration of the results for these indicators from our dashboard, we were able to determine that the increase in educational years, and decrease in fertility is due to Kenya's strong stance on bolstering education, rolling out a Free primary education program in 2003, revamping its curriculum in 2017, and increasing the supply of key materials, such as books, to the students in these counties. Providing such resources has allowed such cities and counties to maintain their economy, but not significantly expand their economy. This could possibly be due to the fact that resources such as teachers can be scarce, unlike supplies, where large teacher-student ratios are common. Further, focusing on educational personnel and providing incentives for individuals to become teachers through student loan forgiveness programs could ameliorate educational personnel constraints, and help build a more specialized younger labor force, which would improve the county's economy overall.</p>        </li>
     </ul>
     <ul class="grid">
         <li>
@@ -349,39 +415,45 @@
 
 </section>
 
-<section id="section-appendix" class="contact">
+<section id="section-appendix" class="about">
     <h3 class="title">Appendix</h3>
     <p></p>
     <hr>
-    <h3>Data sources</h3>
+
+            <h4>Kenya National Bureau of Statistics</h4>
     <br>
-    <ul>
-        <li>
-            <p class="author">Kenya National Bureau of Statistics: GCP, GCP by Industry</p>
-        </li>
-        <li>
-            <p class="author">IHME: Education, TFR, and TMR</p>
-        </li>
-        <li>
-            <p class="author">World Bank Data: Global, Country, and Industry level GDP and GVA</p>
-        </li>
-        <li>
-            <p class="author">WorldPop: Demographic Breakdown by County </p>
-        </li>
-
-        <li>
-            <p class="author">UN Population Model: Population Forecast Model</p>
-        </li>
-        <li>
-            <p class="author">DHS(Comparison): TFR, Education, Population, Wealth Index</p>
-        </li>
-
-    </ul>
+                <p><strong>Aggregated Data: </strong>Population ( Census 2019), Age Demographic ( Census 2019), Gender Demographic (Cenus 2019), GCP (2013-2020), GCP by Industry (2017-2020). Main Cash Crops (Census 2019), Farming Households (Census 2019), Average Household Size (Census 2019), </p>
+            <p><strong>Source: </strong>Wiesmann, U., Kiteme, B., Mwangi, Z. (2019-2021). Socio-Economic Atlas of Kenya: Depicting the National Population Census by County and Sub-Location and Economic Survey. Second, revised edition. KNBS, Nairobi. CETRAD, Nanyuki. CDE, Bern. <a href="https://www.knbs.or.ke/" style="color: #1B98E0">https://www.knbs.or.ke/</a></p>
     <hr>
-
+            <h4>IHME: Global Burden of Disease Study 2019 (GBD 2019) 1990-2019</h4>
     <br>
-
-
+            <p><strong>Aggregated Data: </strong>Median Number of Education Years, TFR, and Life Expectancy</p>
+            <p><strong>Source: </strong>Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2019 (GBD 2019) Life Expectancy and Healthy Life Expectancy 1990-2019. Seattle, United States of America: Institute for Health Metrics and Evaluation (IHME), 2020.</p>
+            <hr>
+            <h4>World Bank</h4>
+    <br>
+            <p><strong>Aggregated Data: </strong>Global, Country, and Country Sector-level GDP and GVA</p>
+            <p><strong>Source: </strong>World Bank, World Development Indicators. (2021).</p>
+            <hr>
+            <h4>WorldPop: Demographic Breakdown by County </h4>
+    <br>
+            <p><strong>Aggregated Data: </strong>Population, Age Demographic, Gender Demographic </p>
+            <p><strong>Source: </strong>WorldPop (<a href="www.worldpop.org" style="color: #1B98E0">www.worldpop.org</a> - School of Geography and Environmental Science, University of Southampton; Department of Geography and Geosciences, University of Louisville; Departement de Geographie, Universite de Namur) and Center for International Earth Science Information Network (CIESIN), Columbia University (2018). Global High Resolution Population Denominators Project - Funded by The Bill and Melinda Gates Foundation (OPP1134076). <a href="https://dx.doi.org/10.5258/SOTON/WP00646"></a></p>
+            <hr>
+            <h4>UN Custom Sub-national Population Model: </h4>
+    <br>
+            <p><strong>Data Inputs: </strong>IHME's county-level TFR & Life Expactancy, World Pop County-level population, UN's Country-level TFR, life expectancy, and migration</p>
+            <p><strong>Summary: </strong>We used BayesTFR and BayesLife to project make and female expected life expectancy at birth and total fertility rate from Ševčíková et. al. (2018)
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6961957/." style="color: #1B98E0"> </a>
+                We then used BayesPop with those the projected life expectancy at birth and total fertility rate to forecast future population.</p>
+            <p><strong>Package Information: </strong>Ševčíková H, Raftery AE (2016). “bayesPop: Probabilistic Population Projections.” Journal of Statistical Software, 75(5), 1–29. <a href ="doi:10.18637/jss.v075.i05." style="color: #1B98E0">doi:10.18637/jss.v075.i05.</a></p>
+            <hr>
+            <h4>DHS Data - Used as a comparative data source</h4>
+    <br>
+            <p><strong>Aggregated Data:  </strong>pre-2010 Historical geospatial location data for TFR, province-level location, education, household size, Median Number of Education Years, ASFR</p>
+            <p><strong>Spatial Data Source: </strong>ICF. The DHS Program Spatial Data Repository. Funded by USAID. spatialdata.dhsprogram.com. [October, 2022].</p>
+    <p><strong>Survey Data Source: </strong>Kenya National Bureau of Statistics, Ministry of Health/Kenya, National AIDS Control Council/Kenya, Kenya Medical Research Institute, and National Council for Population and Development/Kenya. (1989-2020). Kenya Demographic and Health Survey (1989-2014). Rockville, MD, USA</p>
+<hr>
 </section>
 
 <footer>
