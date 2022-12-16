@@ -107,7 +107,7 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	/*padding: 5px;*/
+	padding: 10px;
 	opacity: 0;
 	animation: 1s fadein 0.5 forwards;
 	z-index: 1;
@@ -138,7 +138,7 @@ header nav {
 	padding: 15px;
 	color: black;
 	background-color: white;
-	opacity: 0.8;
+	opacity: 1;
 }
 
 header nav li {
