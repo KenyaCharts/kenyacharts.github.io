@@ -59,7 +59,7 @@ section:not(.hero):nth-child(even) {
 }
 
 hr {
-	width: 250px;
+	width: 350px;
 	height: 3px;
 	background-color: #1B98E0;
 	border: 0;
